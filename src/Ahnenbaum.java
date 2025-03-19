@@ -14,4 +14,22 @@ public class Ahnenbaum {
 
 
   }
+
+  public void PreSearchAusgabe(){
+      PreSearch(SvensAhnenbaum);
+  }
+
+  public void PreSearch(BinaryTree<Ahne> b){
+      if (!b.isEmpty()){
+         System.out.println(b.getContent().getVorname());
+      }
+      if (!b.getLeftTree().isEmpty()){
+          PreSearch(b.getLeftTree());
+      }
+      if (!b.getRightTree()){
+          PreSearch(b.getRightTree());
+      }
+  }
+
+
 }
